@@ -1,3 +1,7 @@
+DebugUtils 1.0.6
+================
+- Fix mixin refmap
+
 DebugUtils 1.0.5.b
 ================
 - Fabric: Fix client packet registering on server
