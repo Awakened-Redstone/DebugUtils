@@ -1,3 +1,7 @@
+DebugUtils 1.0.6
+================
+- Fix mixin refmap
+
 DebugUtils 1.0.5.b
 ================
 - Update to 1.21  
