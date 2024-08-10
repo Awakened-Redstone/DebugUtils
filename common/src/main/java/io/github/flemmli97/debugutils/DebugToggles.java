@@ -31,13 +31,13 @@ import java.util.function.BiConsumer;
  */
 public class DebugToggles {
 
-    public static ResourceLocation ALL = ResourceLocation.tryParse("debug/all");
+    public static ResourceLocation ALL = ResourceLocation.parse("debug/all");
 
     private static final Map<ResourceLocation, ResourcedToggle> GETTER = new TreeMap<>();
 
     private static final Map<UUID, Set<ResourceLocation>> PLAYER_ENABLED = new HashMap<>();
 
-    public static final ResourcedToggle DEBUG_POI = register(ResourceLocation.tryParse("debug/poi"));
+    public static final ResourcedToggle DEBUG_POI = register(ResourceLocation.parse("debug/poi"));
     public static final ResourcedToggle DEBUG_NEIGHBORSUPDATES = register(NeighborUpdatesDebugPayload.TYPE.id());
     public static final ResourcedToggle DEBUG_STRUCTURES = register(StructuresDebugPayload.TYPE.id());
     public static final ResourcedToggle DEBUG_PATHS = register(PathfindingDebugPayload.TYPE.id());
@@ -50,13 +50,13 @@ public class DebugToggles {
     public static final ResourcedToggle DEBUG_GAME_EVENT_LISTENER = register(GameEventListenerDebugPayload.TYPE.id());
     public static final ResourcedToggle DEBUG_BEE_HIVES = register(HiveDebugPayload.TYPE.id());
 
-    public static final ResourcedToggle DEBUG_WATER = register(ResourceLocation.tryParse("debug/water"));
-    public static final ResourcedToggle DEBUG_HEIGHTMAP = register(ResourceLocation.tryParse("debug/heightmap"));
-    public static final ResourcedToggle DEBUG_COLLISION = register(ResourceLocation.tryParse("debug/collision"));
-    public static final ResourcedToggle DEBUG_LIGHT = register(ResourceLocation.tryParse("debug/light"));
-    public static final ResourcedToggle DEBUG_SOLID_FACES = register(ResourceLocation.tryParse("debug/solid_faces"));
-    public static final ResourcedToggle DEBUG_CHUNK = register(ResourceLocation.tryParse("debug/chunk"));
-    public static final ResourcedToggle DEBUG_SPAWN_CHUNK = register(new ResourcedToggle(ResourceLocation.tryParse("debug/spawn_chunk"), (b, players) -> players.forEach(p -> {
+    public static final ResourcedToggle DEBUG_WATER = register(ResourceLocation.parse("debug/water"));
+    public static final ResourcedToggle DEBUG_HEIGHTMAP = register(ResourceLocation.parse("debug/heightmap"));
+    public static final ResourcedToggle DEBUG_COLLISION = register(ResourceLocation.parse("debug/collision"));
+    public static final ResourcedToggle DEBUG_LIGHT = register(ResourceLocation.parse("debug/light"));
+    public static final ResourcedToggle DEBUG_SOLID_FACES = register(ResourceLocation.parse("debug/solid_faces"));
+    public static final ResourcedToggle DEBUG_CHUNK = register(ResourceLocation.parse("debug/chunk"));
+    public static final ResourcedToggle DEBUG_SPAWN_CHUNK = register(new ResourcedToggle(ResourceLocation.parse("debug/spawn_chunk"), (b, players) -> players.forEach(p -> {
         S2CSpawnChunk pkt = new S2CSpawnChunk(p.serverLevel());
         Network.INSTANCE.sendToClient(pkt, p);
     })));
